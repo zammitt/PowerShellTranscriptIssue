@@ -6,7 +6,7 @@ When calling a Cmdlet that uses WriteObject to output data, there appears to be 
 
 ## How to reproduce
 
-Given the script below (Note: The project file in this repo is configured to run this script when launched in visual studio):
+Given the script below (You can easily execute this by launching the project file from this repo in Visual Studio)
 
 ```
 Start-Transcript -Path transcript.txt -UseMinimalHeader

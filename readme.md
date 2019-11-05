@@ -35,6 +35,3 @@ There are two interesting observations here:
 - We were only able to reproduce this with Cmdlets that use WriteObject (as seen in [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs)).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
 - It feels like WriteObject is introducing a delay to the output pipeline that is causing Stop-Transcript to write to file before it is finished processing.
 - Is WriteObject the right thing to be using in Cmdlets?
-).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
-- It feels like WriteObject is introducing a delay to the output pipeline that is causing Stop-Transcript to write to file before it is finished processing.
-- Is WriteObject the right thing to be using in Cmdlets?

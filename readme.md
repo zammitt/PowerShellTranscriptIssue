@@ -28,5 +28,5 @@ There are two interesting observations here.
 2) The output of `Test-Transcript` and `Goodbye from Write-Output` is missing from the transcript.
 
 Things to note:
-- We were only able to reproduce this with Cmdlets that use WriteObject (as seen in Test-TranscriptIssue.ps1).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
+- We were only able to reproduce this with Cmdlets that use WriteObject (as seen in Test-TranscriptIssue.cs).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
 - It feels like WriteObject is introducing a delay to the output pipeline that is causing Stop-Transcript to write to file before it is finished processing.

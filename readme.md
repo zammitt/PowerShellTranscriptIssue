@@ -23,7 +23,7 @@ cat ./transcript.txt
 We get the following output:
 ![Console Output](TestIssueOnPowerShellCore/console.png)
 
-There are two interesting observations here.  
+There are two interesting observations here:
 1) `Goodbye from Write-Output` is appearing before the output of `Test-TranscriptIssue`.
 2) The output of `Test-Transcript` and `Goodbye from Write-Output` is missing from the transcript.
 

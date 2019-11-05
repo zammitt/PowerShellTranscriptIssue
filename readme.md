@@ -2,7 +2,7 @@
 
 Start/Stop transcript does not always capture all output written to the PowerShell console.
 
-Given the following script:
+Given the following script (The project file in this repo is configured to launch pwsh and execute this script upon start):
 
 ```
 Start-Transcript -Path transcript.txt -UseMinimalHeader

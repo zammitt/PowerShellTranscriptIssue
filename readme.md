@@ -2,7 +2,7 @@
 
 Start/Stop transcript does not always capture all output written to the PowerShell console.  
 
-Cmdlets that use WriteObject to output data is what triggers this behavior (See [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs) for an example Cmdlet).
+Cmdlets, like [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs), that use WriteObject to output data is what triggers this behavior.
 
 Given the script below (Note: The project file in this repo is configured to run this script when launched in visual studio):
 

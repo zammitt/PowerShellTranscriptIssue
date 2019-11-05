@@ -1,6 +1,6 @@
 ﻿# Start/Stop Transcript Issue
 
-Start/Stop transcript does not always capture all output written to the PowerShell console.
+Start/Stop transcript does not always capture all output written to the PowerShell console.  Cmdlets that use WriteObject to output data is what triggers this behavior (See [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs) for an example Cmdlet)
 
 Given the following script (The project file in this repo is configured to launch pwsh and execute this script upon start):
 

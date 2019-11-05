@@ -4,6 +4,8 @@ Start/Stop transcript does not always capture all output written to the PowerShe
 
 When calling a Cmdlet that uses WriteObject to output data, there appears to be a delay that backs up the output pipeline.  This results in the output to not be captured when Stop-Transcript is called.  [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs) is an example of such Cmdlet.
 
+## How to reproduce
+
 Given the script below (Note: The project file in this repo is configured to run this script when launched in visual studio):
 
 ```

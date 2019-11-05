@@ -4,7 +4,7 @@ Start/Stop transcript does not always capture all output written to the PowerShe
 
 Cmdlets that use WriteObject to output data is what triggers this behavior (See [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs) for an example Cmdlet).
 
-Given the following script:
+Given the script below (Note: The project file in this repo is configured to run this script when launched in visual studio):
 
 ```
 Start-Transcript -Path transcript.txt -UseMinimalHeader
@@ -26,7 +26,7 @@ We get the following output:
 ![Console Output](TestIssueOnPowerShellCore/console.png)
 
 There are two interesting observations here:
-1) `Goodbye from Write-Output` is appearing before the output of `Test-TranscriptIssue`.
+1) `Goodbye from Write-Output` is appearing before the output of `Test-TranscriptIssue`.   Is `Test-TranscriptIssue` introducing a delay to the output pipeline?
 2) The output of `Test-Transcript` and `Goodbye from Write-Output` is missing from the transcript.
 
 Things to note & thoughts:

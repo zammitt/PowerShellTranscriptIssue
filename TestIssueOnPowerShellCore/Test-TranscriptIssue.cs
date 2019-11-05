@@ -3,10 +3,9 @@ using System.Management.Automation;
 
 namespace TestIssueOnPowerShellCore
 {
-    public class Data
+    public class TestData
     {
-        public string Name { get; set; }
-        public bool Test { get; set; }
+        public string TestProperty { get; set; }
     }
 
 
@@ -15,10 +14,9 @@ namespace TestIssueOnPowerShellCore
     {
         protected override void ProcessRecord()
         {
-            var data = new Data
+            var data = new TestData
             {
-                Name = "Test",
-                Test = true
+                TestProperty = "TestValue"
             };
             WriteObject(data);
         }

@@ -1,0 +1,13 @@
+**********************
+PowerShell transcript start
+Start time: 20191105160503
+**********************
+Transcript started, output file is transcript.txt
+Hello from Write-Output
+Hello from Write-Host
+
+Goodbye from Write-Host
+**********************
+PowerShell transcript end
+End time: 20191105160503
+**********************

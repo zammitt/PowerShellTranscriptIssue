@@ -5,10 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TranscriptIssue.ps1" />
     <None Remove="TranscriptIssue.psd1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="TranscriptIssue.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TranscriptIssue.psd1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

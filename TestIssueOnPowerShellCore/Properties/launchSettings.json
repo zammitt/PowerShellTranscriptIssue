@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "TestIssueOnPowerShellCore": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-NoExit -Command \"Import-Module ./TranscriptIssue.psd1; ./TranscriptIssue.ps1\""
+    }
+  }
+}

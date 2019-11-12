@@ -1,8 +1,12 @@
-﻿# Start/Stop Transcript Issue
+﻿# Start/Stop-Transcript Issue
 
-Start/Stop transcript does not always capture all output written to the PowerShell console.
+Start/Stop-Transcript does not always capture all output written to the PowerShell console.  
 
-Given the following script:
+When calling a Cmdlet that uses WriteObject to output data, there appears to be a delay that backs up the output pipeline.  This results in the output to not be captured when Stop-Transcript is called.  [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs) is an example of such Cmdlet.
+
+## How to reproduce
+
+Given the script below (You can easily execute this by launching the project file from this repo in Visual Studio)
 
 ```
 Start-Transcript -Path transcript.txt -UseMinimalHeader
@@ -23,10 +27,11 @@ cat ./transcript.txt
 We get the following output:
 ![Console Output](TestIssueOnPowerShellCore/console.png)
 
-There are two interesting observations here.  
-1) `Goodbye from Write-Output` is appearing before the output of `Test-TranscriptIssue`.
+There are two interesting observations here:
+1) `Goodbye from Write-Output` is appearing before the output of `Test-TranscriptIssue`.   Is `Test-TranscriptIssue` introducing a delay to the output pipeline?
 2) The output of `Test-Transcript` and `Goodbye from Write-Output` is missing from the transcript.
 
-Things to note:
-- We were only able to reproduce this with Cmdlets that use WriteObject (as seen in Test-TranscriptIssue.ps1).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
+## Other notes & thoughts
+- We were only able to reproduce this with Cmdlets that use WriteObject (as seen in [Test-TranscriptIssue.cs](TestIssueOnPowerShellCore/Test-TranscriptIssue.cs)).   If we replace `Test-TranscriptIssue` with `Get-Module` in the script, everthing seems to work as expected.
 - It feels like WriteObject is introducing a delay to the output pipeline that is causing Stop-Transcript to write to file before it is finished processing.
+- Is WriteObject the right thing to be using in Cmdlets?

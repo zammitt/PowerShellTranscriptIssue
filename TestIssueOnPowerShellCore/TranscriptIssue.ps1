@@ -3,7 +3,7 @@ Start-Transcript -Path transcript.txt -UseMinimalHeader
 Write-Output "Hello from Write-Output"
 Write-Host "Hello from Write-Host"
 
-Get-Module
+Test-TranscriptIssue
 
 Write-Output "Goodbye from Write-Output"
 Write-Host "Goodbye from Write-Host"

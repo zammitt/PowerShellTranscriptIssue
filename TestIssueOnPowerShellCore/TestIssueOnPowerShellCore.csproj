@@ -7,9 +7,13 @@
   <ItemGroup>
     <None Remove="TranscriptIssue.ps1" />
     <None Remove="TranscriptIssue.psd1" />
+    <None Remove="TranscriptIssuev2.ps1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="TranscriptIssuev2.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TranscriptIssue.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
